@@ -1,0 +1,23 @@
+descriptor-schema-version: "2.5"
+info:
+  name: Modbus-MQTT
+  description: "Send serial Modbus RTU data via MQTT to the Kinetic cloud on a Cisco IR829 Gateway"
+  version: "1.0"
+  author-link: "http://developer.cisco.com"
+  author-name: "Florian Pachinger / flopach, Cisco Systems 2019"
+app:
+  type: docker
+  cpuarch: "x86_64"
+
+  resources:
+    profile: c1.small
+    network:
+      -
+        interface-name: eth0
+        ports:
+            tcp: [8883]
+
+# Specify runtime and startup
+  startup:
+    rootfs: rootfs.tar
+    target: ["python3", "/opt/modbus-mqtt/iox-modbus-mqtt.py"]

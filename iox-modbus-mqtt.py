@@ -1,4 +1,6 @@
 # Send serial Modbus RTU data via MQTT to the Kinetic cloud on a Cisco IR829 Gateway
+# Flo Pachinger / flopach, Cisco Systems, 2019
+# Apache License 2.0
 import paho.mqtt.client as mqtt
 import serial
 import minimalmodbus
