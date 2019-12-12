@@ -7,14 +7,17 @@ The main purpose is to send serial Modbus RTU data via MQTT to the Kinetic cloud
 1. Clone the repo
 
 2. Build the image
+
 ```
 docker build -t modbusmqtt:latest .
 ```
-3. Create the IOx tar with ioxclient
+3. Create the IOx tar with [ioxclient](https://developer.cisco.com/docs/iox/#!iox-resource-downloads) (CLI tool)
+
 ```
 ioxclient docker package modbusmqtt:latest .
 ```
 4. Install and run on the IR8x9. You troubleshoot with:
+
 ```
 ioxclient application console <appid>
 ```
@@ -23,7 +26,7 @@ ioxclient application console <appid>
 
 * Cisco Kinetic Gateway Management Module
 * MinimalModbus: https://pypi.org/project/minimalmodbus/
-* PPaho-MQTT: https://pypi.org/project/paho-mqtt/
+* Paho-MQTT: https://pypi.org/project/paho-mqtt/
 
 ## License
 
